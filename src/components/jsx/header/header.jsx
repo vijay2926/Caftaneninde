@@ -1,0 +1,268 @@
+import React, { useState, useEffect } from 'react'
+import Topbar from './topbar'
+import Logo from '../../images/logo/logo.svg'
+import { Link } from 'react-router-dom'
+function Header() {
+    const [state, setState] = useState(false);
+    const [scrolltopdata, setscrolltopdata] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
+
+    const changeState = () => {
+        setState(!state);
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY < 15) {
+                setscrolltopdata('');
+            } else {
+                setscrolltopdata('scrolled');
+            }
+        });
+    }, [])
+
+
+ 
+    const handleOpenBar = () => {
+      setIsOpen(true); // Add class
+    };
+   
+    const handleCloseBar = () => {
+      setIsOpen(false);  
+    };
+    return (
+        <>
+            <header className={`header-wrapper ${scrolltopdata}`}>
+                <Topbar />
+                <div className="main_nav">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-md-4 my-auto d-lg-block d-none">
+                                <div className="mail_topbar">
+                                    <Link  ><i class="fa-regular fa-envelope"></i><span> order@aftaneninde.com</span></Link>
+                                </div>
+                            </div>
+                            <div className="col-md-4">
+                                <div className="logo_topbar">
+                                    <img src={Logo} alt="" />
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-md-8 my-auto">
+                                <div className="topbar_ssb_box">
+                                    <ul>
+                                        <li>
+                                            {state ? <div class="contentt" >
+                                                <input type="text" id="txtSearch" class="form-control" placeholder="Search Here..." />
+                                                <a class="search_icn" >
+                                                    <i class="fas fa-search"></i>
+                                                </a>
+
+                                            </div> : null}
+                                            <Link onClick={changeState}><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span></Link>
+
+                                        </li>
+                                        <li className='d-lg-block d-none'>
+                                            <Link>Sign In</Link>
+                                        </li>
+                                        <li>
+                                            <Link>BAg
+                                                <span className='count_pr'>0</span>
+                                            </Link>
+
+                                        </li>
+                                        <li  className='d-lg-none d-flex open_sidenav'>
+                                            <Link onClick={handleOpenBar}><i class="fa-solid fa-bars"></i></Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+
+                            <div className="col-xl-12">
+                                <nav className='d-lg-block d-none'>
+                                    <ul>
+                                        <li>
+                                            <Link>Home</Link>
+                                        </li>
+                                        <li>
+                                            <Link>Woman<i class="fa-solid fa-angle-down"></i></Link>
+                                            <ul className='shownaw'>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <Link>Men<i class="fa-solid fa-angle-down"></i></Link>
+                                            <ul className='shownaw'>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                                <li>
+                                                    <Link>Designer Sherwani</Link>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <Link>Designer lehenga</Link>
+                                        </li>
+
+                                        <li>
+                                            <Link>Designer Sherwani </Link>
+                                        </li>
+                                        <li>
+                                            <Link>Wedding</Link>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <Sidbar />
+        </>
+    )
+}
+
+export { Header };
+
+
+
+
+
+
+
+function Sidbar() {
+    const [activeMenu, setActiveMenu] = useState(null);
+
+    const handleToggle = (index) => {
+        setActiveMenu(activeMenu === index ? null : index);
+    };
+    return (
+        <>
+            <aside className={`my-div ${isOpen ? 'active' : ''}`}>
+                <div className="logo">
+                    <img src={Logo} alt="" />
+                </div>
+                <ul>
+                    <li>
+                        <Link className="sub-btn" onClick={() => handleToggle(1)}>
+                            <span>Home</span>
+                        </Link>
+                    </li>
+                    <li className={`${activeMenu === 1 ? 'active' : ''}`}>
+                        <Link className="sub-btn" onClick={() => handleToggle(1)}>
+                            <span>Woman</span>
+                            <span className={`dropdown1 ${activeMenu === 1 ? 'rotate' : ''}`}><i class="fa-solid fa-caret-right"></i></span>
+                        </Link>
+                        <ul className={`sub-menu ${activeMenu === 1 ? 'active' : ''}`}>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li className={`${activeMenu === 2 ? 'active' : ''}`}>
+                        <Link className="sub-btn" onClick={() => handleToggle(2)}>
+                            <span>Men</span>
+                            <span className={`dropdown1 ${activeMenu === 2 ? 'rotate' : ''}`}><i class="fa-solid fa-caret-right"></i></span>
+                        </Link>
+                        <ul className={`sub-menu ${activeMenu === 2 ? 'active' : ''}`}>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                            <li>
+                                <Link>Designer Sherwani</Link>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <Link className="sub-btn"  >
+                            <span>Designer lehenga</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="sub-btn"  >
+                            <span>Designer Sherwani</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="sub-btn"  >
+                            <span>Wedding</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="sub-btn login_btn"  >
+                            <span>Login</span>
+                        </Link>
+                    </li>
+
+                </ul>
+                <Link onClick={handleCloseBar}>
+                <span className="close" >X</span>
+
+                </Link>
+            </aside>
+        </>
+    )
+}
+
+export { Sidbar };
+
