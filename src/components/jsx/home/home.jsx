@@ -1,7 +1,7 @@
 import React from 'react'
- 
-import Home_area from './home_area'
+  
 import { Header } from '../header/header'
+import { Home_area } from './home_area'
 
 function Home() {
   return (

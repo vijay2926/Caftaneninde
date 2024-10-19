@@ -41,7 +41,7 @@ function Topbar() {
                         <div className="col-xl-6 mx-auto">
                             <div className="topmiddle_inner">
                               
-                                    <div class="m-scroll">
+                                    <div className="m-scroll">
                                         <span>* Enjoy free shipping on all orders in India * Buy any 2 products and get 5% off Coupon code: special5 * Buy any 4 or more products and get 10% off Coupon code: special10* Enjoy free shipping on all orders in India * Buy any 2 products and get 5% off Coupon code: special5 *</span>
                                     </div>
                                 </div>
