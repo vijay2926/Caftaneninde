@@ -64,7 +64,7 @@ function Header() {
                                             <Link>Sign In</Link>
                                         </li>
                                         <li>
-                                            <Link>BAg
+                                            <Link to="/product-details">BAg
                                                 <span className='count_pr'>0</span>
                                             </Link>
 

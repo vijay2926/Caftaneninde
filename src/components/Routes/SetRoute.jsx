@@ -10,6 +10,7 @@ import Login from "../jsx/login/login.jsx";
 import Sign_up from "../jsx/sign-up/sign_up.jsx";
 import Home from "../jsx/home/home.jsx";
 import Product from "../jsx/product/product.jsx";
+import { Product_details } from "../jsx/product/product_details.jsx";
  
  
  
@@ -24,6 +25,7 @@ function SetRoute() {
         <Routes>  
         <Route path="/" element={  <Home />}></Route>  
         <Route path="/product" element={  <Product />}></Route>  
+        <Route path="/product-details" element={  <Product_details />}></Route>  
         
         </Routes>
       </Router>
