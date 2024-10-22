@@ -83,28 +83,28 @@ function Header() {
                                 <nav className='d-lg-block d-none'>
                                     <ul>
                                         <li>
-                                            <Link>Home</Link>
+                                            <Link to="/">Home</Link>
                                         </li>
                                         <li>
                                             <Link>Woman<i className="fa-solid fa-angle-down"></i></Link>
                                             <ul className='shownaw'>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link to="/product">Designer Sherwani</Link>
                                                 </li>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link  to="/product">Designer Sherwani</Link>
                                                 </li>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link  to="/product">Designer Sherwani</Link>
                                                 </li>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link  to="/product">Designer Sherwani</Link>
                                                 </li>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link  to="/product">Designer Sherwani</Link>
                                                 </li>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link  to="/product">Designer Sherwani</Link>
                                                 </li>
                                             </ul>
                                         </li>
@@ -112,22 +112,22 @@ function Header() {
                                             <Link>Men<i className="fa-solid fa-angle-down"></i></Link>
                                             <ul className='shownaw'>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link to="/product">Designer Sherwani</Link>
                                                 </li>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link to="/product">Designer Sherwani</Link>
                                                 </li>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link to="/product">Designer Sherwani</Link>
                                                 </li>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link to="/product">Designer Sherwani</Link>
                                                 </li>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link to="/product">Designer Sherwani</Link>
                                                 </li>
                                                 <li>
-                                                    <Link>Designer Sherwani</Link>
+                                                    <Link to="/product">Designer Sherwani</Link>
                                                 </li>
                                             </ul>
                                         </li>

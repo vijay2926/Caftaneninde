@@ -9,6 +9,7 @@ import React, { useState, useEffect } from 'react';
 import Login from "../jsx/login/login.jsx";
 import Sign_up from "../jsx/sign-up/sign_up.jsx";
 import Home from "../jsx/home/home.jsx";
+import Product from "../jsx/product/product.jsx";
  
  
  
@@ -22,7 +23,7 @@ function SetRoute() {
         <Router>  
         <Routes>  
         <Route path="/" element={  <Home />}></Route>  
-        <Route path="/sign-up" element={  <Sign_up />}></Route>  
+        <Route path="/product" element={  <Product />}></Route>  
         
         </Routes>
       </Router>

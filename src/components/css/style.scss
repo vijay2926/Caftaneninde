@@ -29,7 +29,7 @@ body {
     box-sizing: border-box;
     transition: all ease 0.5s;
 }
-
+ 
 .container-fluid {
     padding-left: 50px !important;
     padding-right: 50px !important;
@@ -189,7 +189,7 @@ p {
                     input {
                         width: 100%;
                         height: 40px;
-                        border: 1px solid #d4d0d0;
+                        border: 1px solid $dark-pink-color solid #d4d0d0;
                         font-size: 10px;
                         font-weight: 500;
                         color: #2e2e2e;
@@ -245,7 +245,7 @@ p {
                 .shownaw {
                     position: absolute;
                     background-color: $dark-pink-color;
-                    box-shadow: 0px 1px 10px #f30de015;
+                    box-shadow: 0px 1px solid $dark-pink-color 10px #f30de015;
                     border-radius: 5px;
                     padding-left: 0px;
                     overflow: hidden;
@@ -607,7 +607,7 @@ aside.active {
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 0.125rem 1rem 3px rgba(255, 255, 255, 0.1);
-            border: 1px solid rgb(255, 255, 255);
+            border: 1px solid $dark-pink-color solid rgb(255, 255, 255);
 
             .image {
                 width: 100%;
@@ -639,7 +639,7 @@ aside.active {
                     font-family: $Nunito_font;
                     font-size: 19px;
                     font-weight: 600;
-                    line-height: 19.1px;
+                    line-height: 19.1px solid $dark-pink-color;
                     text-align: center;
                     margin-top: 15px;
                 }
@@ -1478,7 +1478,7 @@ aside.active {
             font-size: 15.6px;
             font-weight: 300;
             line-height: 36.4px;
-            letter-spacing: 1px;
+            letter-spacing: 1px solid $dark-pink-color;
             text-align: center;
             margin-top: 20px;
             color: white;
@@ -1615,6 +1615,135 @@ footer {
             }
         }
     }
+    .footer_inner{
+        h4{
+            color: black;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        p{
+            max-width: 70%;
+        }
+        span{
+            color: $dark-pink-color;
+            margin-top: 15px;
+            display: flex;
+            font-weight: 700;
+
+        }
+        .newsletter{
+            padding-top: 25px !important;
+            display: block;
+            margin-top: 10px !important;
+
+            background-color: white;
+            padding: 25px 19px;
+            border-radius: 8px;
+            max-width: 90%;
+
+            h5{
+                color: black;
+                font-size: 18px;
+                font-weight: 700;
+            }
+            p{
+                max-width: 80%;
+            }
+            .form_box{
+                display: flex;
+                align-items: center;
+                margin-top: 15px;
+                input{
+                    padding: 13px 15px;
+                    border: 1px solid $dark-pink-color;
+                    width: 60%;
+                    color: $dark-pink-color;
+                    &::placeholder{
+                    color: $dark-pink-color;
+
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                button{
+                    margin-top: 0 !important;
+                    padding: 13px 15px !important;
+                    width: 40%;
+                justify-content: center;
+                text-align: center;
+                    span{
+                        margin-top: 0;
+                        color: white;
+                        justify-content: center;
+ 
+
+                    }
+                }
+            }
+            .social_links{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-top: 15px;
+                a{
+                    color: $dark-pink-color;
+                    font-size: 20px;
+                }
+            }
+        }
+       
+    }
+}
+.page_cat_header{
+    padding: 15px 0;
+    background-color: $dark-pink-color;
+    margin-top: 10px;
+    .page_cat_inner{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        a{
+            color: white;
+        }
+        a.current{
+            background-color: white;
+            padding:9px 17px;
+            color: $dark-pink-color;
+            border-radius: 5px;
+            font-weight: 600 !important;
+        }
+        i{
+            color: white;
+
+        }
+    }
+}
+.product_area{
+    .product_filter{
+        background-color: white;
+        padding: 10px 0;
+        .row_changer{
+            display: flex;
+            align-items: center;
+            background-color: $dark-pink-color;
+            padding: 8px;
+            gap: 10px;
+            width: fit-content;
+            justify-content: center; 
+            display: inline-grid;
+            grid-template-columns: repeat(2, 2fr);
+            border-radius: 8px;
+             cursor: pointer;
+            span{
+                width: 8px;
+                height: 8px;
+                background-color: white;
+                border-radius: 50px;
+            }
+
+        }
+    }
 }
 
 
@@ -1684,6 +1813,20 @@ footer {
     .main_nav {
         border-radius: 0;
     }
+    footer .footer-logo > a {
+        padding: 15px;
+        height: 269px;
+        width: 300px;
+        background-color: white;   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        line-height: normal;
+        width: 100%;
+        border-radius: 0;
+        margin-bottom: 21px;
+    }
 
 }
 
@@ -1698,7 +1841,10 @@ footer {
         width: 100%;
         font-size: 25px;
     }
-
+    .fashion_w_area .fashion_w_inner p {
+      
+        text-align: justify;
+    }
     .popupContentStyle {
         position: relative;
         width: 100%;
@@ -1728,6 +1874,13 @@ footer {
 
     .product_coll_inner h2 {
         font-size: 22px;
+    }
+    footer .footer_inner .newsletter p{
+        max-width: 100%;
+    }
+    footer .footer_inner .newsletter{
+        max-width: 100%;
+
     }
 }
 
